@@ -26,13 +26,11 @@ jobs:
       with:
         version: 12 
       
-    # Installs yarn
-    - uses: borales/actions-yarn@v2.0.0
-      with:
-        cmd: install # will run `yarn install` command
+    - name: Installs react, react-dom, react-scripts
+      run: npm install react react-dom react-scripts 
     
     - name: Build React App
-      run: yarn build
+      run: npm run build
     
     - name: Install surge
       run: npm install --global surge
